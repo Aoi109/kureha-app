@@ -81,7 +81,7 @@
         }
 
         #character-text {
-            margin: 10px;
+            margin: 5px;
             padding: 10px;
             color: #fff;
             font-size: 0.8rem;
@@ -236,6 +236,7 @@
             display: flex;
             flex-wrap: wrap;
             width: 80%;
+            background-size: cover;
         }
 
         .back-image div,
@@ -431,14 +432,15 @@
             .select-image div {
                 background-size: cover;
                 background-repeat: no-repeat;
-                background-position: left 0 top 0;
+                /* background-position: left 0 top 0; */
+                background-position: center;
                 margin-right: 30px;
                 margin-bottom: 20px;
                 opacity: 0.8;
                 cursor: pointer;
                 transition: 0.2s;
                 width: 100%;
-                height: 120px;
+                /* height: 120px; */
             }
 
             .select-image div:hover {
@@ -783,7 +785,8 @@
             if (a || val !== null) {
                 var rnd2 = Math.floor(Math.random() * (target.serifList.length + 0) + 0);
                 $('#character-text').html(target.serifList[rnd2].serif);
-                $('#character-position').css('background-image', 'url(pict/chara/' + target.serifList[rnd2].image + '.png)');
+                $('#character-position').css('background-image', 'url(pict/chara/' + target.serifList[rnd2].image);
+                // $('#character-position').css('background-image', 'url(pict/chara/' + target.serifList[rnd2].image + '.png)');
                 if (a) {
                     var result = changeBackground(null).result;
                     console.log('change background-image', result);
@@ -792,7 +795,8 @@
             else {
                 var rnd2 = Math.floor(Math.random() * (target.tunList.length + 0) + 0);
                 $('#character-text').html(target.tunList[rnd2].serif);
-                $('#character-position').css('background-image', 'url(pict/chara/' + target.tunList[rnd2].image + '.png)');
+                $('#character-position').css('background-image', 'url(pict/chara/' + target.tunList[rnd2].image);
+                // $('#character-position').css('background-image', 'url(pict/chara/' + target.tunList[rnd2].image + '.png)');
             }
             $('#character-text').show('slide', { direction: 'left' }, 500);
             if (a) { show(true); }
@@ -1012,12 +1016,18 @@
             <img src="pict/back/0.jpg">
 
             <!-- キャラクター画像/差分込で読み込み -->
-            <img src="pict/index/main.png">
-            <img src="pict/chara/main.png">
-            <img src="pict/chara/sub1.png">
-            <img src="pict/chara/sub2.png">
-            <img src="pict/chara/sub3.png">
-            <img src="pict/chara/sub4.png">
+            <img src="pict/index/Kmain.png">
+            <img src="pict/index/Rmain.png">
+
+            <img src="pict/chara/Kmain.png">
+            <img src="pict/chara/Ksub1.png">
+            <img src="pict/chara/Ksub2.png">
+            <img src="pict/chara/Ksub3.png">
+            <img src="pict/chara/Ksub4.png">
+            <img src="pict/chara/Ksub5.gif">
+
+            <img src="pict/chara/Rmain.png">
+            <img src="pict/chara/Rsub.png">
 
             <!-- 音源 -->
             <audio loop preload muted id="bgm0" name="bgm-sound">
@@ -1064,9 +1074,19 @@
                 <h1>Character</h1>
                 <div class="select-image chara-image">
                     <!-- キャラクター差し替え箇所 -->
-                    <div id="index0" style="background-image:url(pict/index/main.png);">
-                        <p class="pcname">雨池紅波</p>
+                    <div id="index0" style="background-image:url(pict/index/Kmain.png);">
+                        <!-- <div id="index0"> -->
+                        <p class="pcname">雨池 紅波</p>
                     </div>
+                    <!-- <div id="index1" style="background-image:url(pict/index/Rmain.png);">
+                        <p class="pcname">権守 龍玄</p>
+                    </div>
+                    <div id="index2" style="background-image:url(pict/index/Imain.png);">
+                        <p class="pcname">彩葉</p>
+                    </div>
+                    <div id="index3" style="background-image:url(pict/index/Ymain.png);">
+                        <p class="pcname">雪之丞</p>
+                    </div> -->
                 </div>
             </div>
             <div class="menu-item" name="setting" style="display:none;">
@@ -1106,6 +1126,7 @@
                     class="blank">https://www.pakutaso.com/20210450109post-34254.html <i
                         class="fa-solid fa-up-right-from-square"></i></a><br>
                 <br>
+
 
                 <br>
                 <h1>Developer</h1>
