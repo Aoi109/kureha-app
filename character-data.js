@@ -104,7 +104,7 @@ var characterSet = [
 				'image': 'Kmaid2.png'
 			}
 		]
-	},
+	}
 	// {
 	// 	'index': 2,
 	// 	'name': '彩葉',
